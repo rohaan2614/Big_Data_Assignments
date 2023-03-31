@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6af7a8f8-05ff-4770-be95-f15939262f53" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Big_Data_Assignments" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-1/CSCI-620 Assignment 1 - Relational model.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-1/ddl.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-1/ddl_old.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-1/loadData.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-1/q5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-1/submission.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-1/submission/CSCI-620 Assignment 1 - Relational model copy.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-1/submission/README.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-1/submission/ddl.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-1/submission/loadData.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-1/test.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-1/~$README.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/CSCI-620 Assignment 2 - SQL.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/DDL.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/README.MD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/config.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/data_preprocessing/Basics.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/data_preprocessing/Characters.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/data_preprocessing/Genres.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/data_preprocessing/Member.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/data_preprocessing/Ratings.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/data_preprocessing/Title.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/data_preprocessing/jobs.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/data_preprocessing/title_genre.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/ddl/Actor_Title_Character.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/ddl/Character.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/ddl/Genre.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/ddl/Member.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/ddl/Title_Actor.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/ddl/Title_Director.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/ddl/Title_Genre.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/ddl/Title_Producer.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/ddl/Title_Writer.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/ddl/title.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/documentation/erd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/load_data/Genre.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/load_data/Member.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/load_data/Title.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/load_data/Title_Genre_1.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/load_data/Title_Genre_2.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/load_data/characters_1.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/load_data/characters_2.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/load_data/jobs.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/programs/characters.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/programs/genres.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/programs/title_genre.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-2/setup.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-3/Assignment 3 Answers.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-3/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-3/config.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-3/documentation/CSCI-620 Assignment 3 - Normalization.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-3/documentation/work.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-3/initial_state/scehma.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-3/programs/task_1.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-3/programs/task_2.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-3/programs/task_2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-3/programs/task_3.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-3/programs/task_3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-3/programs/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-3/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-3/task_2_estimations.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-4/ass_4.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-4/config.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-4/documentation/CSCI-620 Assignment 4 - Document databases.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-4/programs/1_connect_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-4/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-4/scripts/1_export_from_psql.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-4/task_2.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-4/task_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-5/assignment_5.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-5/assignment_5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-5/code.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-5/programs/task_1.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-5/programs/task_2.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-5/programs/task_3.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new/Big_Data_Assignments/assignment-5/programs/task_4.sql" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2M3nNxkns0GvdM9qrG5DFeHwvQl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenDatabaseViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Pretty-Groovy.txt.groovy&quot;,
+    &quot;database.data.extractors.current.id&quot;: &quot;Pretty-Groovy.txt.groovy&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rohaan/Desktop/Projects/RIT/CSCI_601_Intro_To_Big_Data/Big-Data-Assignments/assignment-5/programs&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.data.views&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;,
+      &quot;mongo&quot;
+    ],
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;7f701b4f-c6b4-485c-a684-d35535cb9606/schema/\&quot;csci_620_ass_4\&quot;&quot;,
+      &quot;7f701b4f-c6b4-485c-a684-d35535cb9606&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assignment-5/programs" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="DatabaseScript" />
+      </set>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
