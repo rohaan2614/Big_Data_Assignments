@@ -1,0 +1,2 @@
+- [ ] Moved latest version of tables and data to initial_data.
+- [ ] popualate ATC from unnested_characters.tsv
