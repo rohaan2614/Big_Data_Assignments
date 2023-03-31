@@ -1,6 +1,7 @@
 # libraries
 import json
 import pymongo
+from tqdm import tqdm
 
 # constants
 additional_data_file = '/Users/rohaan/Desktop/Projects/RIT/CSCI_601_Intro_To_Big_Data/Big-Data-Assignments/assignment-6/additional_data/extra-data.json'
@@ -14,6 +15,7 @@ add_info_collection = my_db[collection_name]
 with open(additional_data_file, 'r') as src_file:
     successes = 0
     id_absences = 0
+    title_absences = 0
     revenue_absences = 0
     cost_absences = 0
     distributor_absences = 0
@@ -21,16 +23,21 @@ with open(additional_data_file, 'r') as src_file:
     insertion_errors = 0
     duplicates_ignored = 0
     useless_objects = 0 # objects that contain nothing expect the id
-    for line in src_file.readlines():
+    lines = src_file.readlines()
+    for i in tqdm(range(len(lines))):
+        line = lines[i]
         try:
             # load json
             data = json.loads(line)
-            # identify key json fields
             restructured_data = {}
             try:
                 restructured_data['_id'] = int(data['IMDb_ID']['value'][2:])
             except KeyError:
                 id_absences += 1
+            try:
+                restructured_data['title'] = data['titleLabel']['value']
+            except KeyError:
+                title_absences += 1
             try:
                 restructured_data['revenue'] = float(
                     data['box_office']['value'])
@@ -65,4 +72,4 @@ with open(additional_data_file, 'r') as src_file:
         except Exception as E:
             print('Unhandled Exception: ', E)
     total_errors = id_absences + insertion_errors
-    print(f'Successes : {successes}, \nid_absences: {id_absences}\trevenue_absences: {revenue_absences}\tcost_absences: {cost_absences}\ndistributor_absences: {distributor_absences}\trating_absences: {rating_absences}\ninsertion_errors : {insertion_errors}\tduplicates_ignored : {duplicates_ignored}\t only_id_rows: {useless_objects}\nError %: {round(total_errors*100/(total_errors+successes+duplicates_ignored),3)}\tSuccess %: {round(successes*100/(total_errors+successes+duplicates_ignored),3)}')
+    print(f'Successes : {successes}, \nid_absences: {id_absences}\trevenue_absences: {revenue_absences}\tcost_absences: {cost_absences}\ndistributor_absences: {distributor_absences}\ttitle_absences: {title_absences}\trating_absences: {rating_absences}\ninsertion_errors : {insertion_errors}\tduplicates_ignored : {duplicates_ignored}\t only_id_rows: {useless_objects}\nError %: {round(total_errors*100/(total_errors+successes+duplicates_ignored),3)}\tSuccess %: {round(successes*100/(total_errors+successes+duplicates_ignored),3)}')
