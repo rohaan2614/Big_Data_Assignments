@@ -1,4 +1,3 @@
-# %%
 # libraries
 import pymongo
 from tqdm import tqdm
