@@ -7,4 +7,4 @@ CREATE table IF NOT EXISTS L2 AS (
                 FROM popular_movie_actors) AS actor_2_alias
     WHERE (actor1 < actor2) AND (actor1_movie = actor2_movie)
     GROUP BY actor1, actor2
-                               );
+    HAVING COUNT(actor1_movie) >= 5);
