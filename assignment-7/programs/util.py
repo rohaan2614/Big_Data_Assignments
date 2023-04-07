@@ -26,35 +26,56 @@ def generate_query(min_support, break_point):
 
     select_clause += 'COUNT(actor1_movie) AS "movies" FROM ( SELECT actor AS "actor1", title AS "actor1_movie" FROM popular_movie_actors) AS actor_1_alias'
 
-    query = select_clause + cross_join_clause + where_clause + group_clause[:-2] + f' HAVING COUNT(actor1_movie) >= {min_support};'
-    return query
+    
+    query = f'CREATE TABLE IF NOT EXISTS L{num_actors - 1} AS (' + select_clause + cross_join_clause + where_clause + group_clause[:-2] + f' HAVING COUNT(actor1_movie) >= {min_support}); SELECT COUNT(*) FROM L{num_actors - 1};'
+    return query, num_actors - 1
 
-def query_recursively(min_support = 5, trim_query_print=False, print_characs=100):
+
+def query_recursively(min_support = 5, trim_query_print=False, print_characs=140):
 
     connection = psycopg2.connect("dbname=csci_620_ass_2")
     cursor = connection.cursor()
     break_point = 1
     results = []
     
-    query = generate_query(min_support=min_support, break_point = break_point)
+    query, lattice_levels = generate_query(min_support=min_support, break_point = break_point)
     if trim_query_print :
         print('Executing query:\n' + '\t' + query[:print_characs], '...')
     else:
         print('Executing query:\n' + '\t' + query)
     cursor.execute(query)
     results = cursor.fetchall()
-    print('\tResults returned: ', len(results))
+    print('\tResults returned: ', results[0][0])
 
-    while len(results) > 0 :
+    while (results[0][0]) > 0:
         break_point += 1
-        query = generate_query(min_support=min_support, break_point = break_point)
+        query, lattice_levels = generate_query(min_support=min_support, break_point = break_point)
         if trim_query_print :
             print('Executing query:\n' + '\t' + query[:print_characs], '...')
         else:
             print('Executing query:\n' + '\t' + query)
         cursor.execute(query)
         results = cursor.fetchall()
-        print('\tResults returned: ', len(results))
+        print('\tResults returned: ', results[0][0])
 
+    connection.commit()
     cursor.close()
     connection.close()
+
+    return lattice_levels - 1
+
+def query_psql(query, dbname='csci_620_ass_2'):
+    connection = psycopg2.connect(f"dbname={dbname}")
+    cursor = connection.cursor()
+    cursor.execute(query)
+    executed = False
+    try:
+        results = cursor.fetchall()
+        executed = True
+    except:
+        pass
+    connection.commit()
+    cursor.close()
+    connection.close()
+    if (executed):
+        return results
