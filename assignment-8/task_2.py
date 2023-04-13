@@ -1,6 +1,6 @@
 import pymongo
 import argparse
-from config import (db_name, mongo_host, mongo_port, scored_collection, 
+from config import (db_name, mongo_host, mongo_port, scored_collection,
                     task_2_collection as centeroids)
 
 # parse arguments
@@ -33,23 +33,23 @@ pipeline = [
         '$sample': {
             'size': number_of_centeroids
         }
-    }, {
-        '$out': centeroids
     }
 ]
 
-k_means_collection.aggregate(pipeline=pipeline)
-
-
-centeroids = no_sql_db.get_collection(centeroids)
-documents = centeroids.find({})
-
+results = k_means_collection.aggregate(pipeline=pipeline)
+modified_results = []
 i = 0
-for doc in documents:
-    print(f"Old ID:\t{doc['_id']}\tnew ID:{i}\tTitle:\t{doc['title']}")
-    query = {"_id" : doc['_id']}
-    new_value = { "$set": {"id" : i} }
-    centeroids.update_one(query, new_value)
+for movie in results:
+    movie['_id'] = i
+    modified_results.append(movie)
     i += 1
+
+
+# delete previous centeroids
+no_sql_db[centeroids].drop()
+
+# populate new centeroids
+centeroids = no_sql_db.get_collection(centeroids)
+centeroids.insert_many(modified_results)
 
 print("All Done")
