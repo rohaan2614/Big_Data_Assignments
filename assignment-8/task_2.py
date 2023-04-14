@@ -33,12 +33,17 @@ pipeline = [
         '$sample': {
             'size': number_of_centeroids
         }
+    }, {
+        '$project': {
+            'kMeansNorm': 1
+        }
     }
+
 ]
 
 results = k_means_collection.aggregate(pipeline=pipeline)
 modified_results = []
-i = 0
+i = 1
 for movie in results:
     movie['_id'] = i
     modified_results.append(movie)
