@@ -3,10 +3,11 @@ from math import dist, inf
 from config import *
 
 def euclidiean_distance(point_1, point_2):
-    if point_1 == point_2:
-        return inf
-    else:
-        return dist(point_1, point_2)
+    # if point_1 == point_2:
+    #     return inf
+    # else:
+    #     return dist(point_1, point_2)
+    return dist(point_1, point_2)
     
 def get_distances(points, centeroids):
     distances = {}
@@ -79,6 +80,10 @@ def initialize_centeroids(genre, num_of_centeroids, db) :
     centeroids.drop()
     # populate new centeroids
     centeroids.insert_many(modified_results)
+    print("Centoroids initialized:")
+    i = 1
+    for result in modified_results:
+        print("\t",result)
 
 def get_number_clusters(collection, genre):
     pipeline = [{'$match': {'genres': {'$elemMatch': {'$eq': genre}}}}, {'$count': '#clusters'}]
@@ -148,3 +153,41 @@ def get_SSE(genre, db):
     '''Sums over squared distance in the mongo collection'''
     src_collection = db.get_collection(scored_collection)
     return list(src_collection.aggregate([{'$match': {'genres': {'$elemMatch': {'$eq': genre}}}}, { '$group': {'_id': 1,'SSE': {'$sum': '$squared_distance'}}}]))[0]['SSE']
+
+
+def run_k_means(genre, num_of_clusters, db, max_iterations=5):
+    '''Runs k_means until max_iteractions or convergence'''
+    k_means_collection = db.get_collection(scored_collection)
+    centeroids_collection = db.get_collection(task_2_collection)
+    initialize_centeroids(
+        genre=genre, num_of_centeroids=num_of_clusters, db=db)
+    SSEs = []
+    for iter in range(max_iterations):
+        data_points = list(k_means_collection.find({'genres': {'$elemMatch': {
+                       '$eq': genre}}}, {'kMeansNorm': 1, 'genres': 1, 'cluster': 1}))
+        print("iteration: ",iter + 1)
+        for data_point in data_points:
+            print("\tDatapoint: ", data_point)
+            centeroids = get_centeroids(db=db)
+            distances = get_distances([data_point], centeroids)
+            for distance in distances.values():
+                for dist in distance:
+                    print("\t\tDistance_to_centeroid: ", dist)
+            cluster_assignments = get_nearest_clusters(distances)
+            assigned_cluster = cluster_assignments[0][1]
+            print("\tNearest Cluster: ", assigned_cluster)
+            k_means_collection.update_one({"_id": data_point['_id']}, {"$set": {"cluster": assigned_cluster, "squared_distance" : cluster_assignments[0][-1]}})
+            current_centeroid = list(centeroids_collection.find({'_id' : cluster_assignments[0][1]}))[0]['kMeansNorm']
+            new_centeroid = get_new_centeroid([{'kMeansNorm' : current_centeroid}, data_point])
+            centeroids_collection.update_one({"_id": assigned_cluster}, {"$set": {"kMeansNorm": new_centeroid}})
+            print()
+        SSE = get_SSE(genre, db)
+        print("\tSSE:", SSE)
+        SSEs.append(SSE)
+        if (len(SSEs)>=3) :
+            if (SSEs[-1] == SSEs[-2]) & (SSEs[-2] == SSEs[-3]):
+                print("******* POINT OF CONVERGENCE ACHIEVED *******")
+                print(f"******* k-Means PAUED AFTER {iter} iterations *******")
+                break
+        print("\n\n")
+    return SSEs[-1]

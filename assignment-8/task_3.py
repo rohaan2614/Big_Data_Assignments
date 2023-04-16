@@ -35,6 +35,7 @@ for data_point in data_points:
     cluster_assignments = get_nearest_clusters(distances)
     print("\tCluster Assignment:\t", cluster_assignments)
     assigned_cluster = cluster_assignments[0][1]
+    sqaured_distance = cluster_assignments[0][2]
     # calculate new centeroid coordinates
     old_coordinates = list(centeroids_collection.find({'_id' : cluster_assignments[0][1]}))[0]['kMeansNorm']
     new_coordinates = get_new_centeroid([{'kMeansNorm' : old_coordinates}, data_point])
@@ -47,4 +48,5 @@ for data_point in data_points:
         # movie
     query = {"_id": data_point['_id']}
     new_value = {"$set": {"cluster": assigned_cluster}}
+    new_value = {"$set": {"cluster": assigned_cluster, "squared_distance": sqaured_distance}}
     scored_movies.update_one(query, new_value)
